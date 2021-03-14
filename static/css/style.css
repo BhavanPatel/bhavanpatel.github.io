@@ -439,6 +439,6 @@ small {
   height: 70% !important;
 }
 
-.content-scrollable .card-content .overflow-auto {
+.content-scrollable {
   height: 120px;
 }
