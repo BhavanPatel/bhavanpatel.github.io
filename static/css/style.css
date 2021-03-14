@@ -438,8 +438,3 @@ small {
 .rH {
   height: 70% !important;
 }
-
-.content-scrollable {
-  height: 120px;
-  overflow: scroll;
-}
