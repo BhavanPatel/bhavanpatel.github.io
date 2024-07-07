@@ -13,4 +13,4 @@
 
 | 🤒 Apps                                                                    |
 | -------------------------------------------------------------------------- |
-| [I am on sick leave](https://bhavanpatel.github.io/aoo/i-am-on-sick-leave) |
+| [I am on sick leave](https://bhavanpatel.github.io/app/i-am-on-sick-leave) |
