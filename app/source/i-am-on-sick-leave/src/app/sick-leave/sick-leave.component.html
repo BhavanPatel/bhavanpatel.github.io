@@ -1,0 +1,117 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-5">I am on sick leave 🤒</h1>
+  <h6 class="text-center mb-5">Plan your sick leave better 📅</h6>
+
+  <form (ngSubmit)="onSubmit()" class="row g-3">
+    <!-- Form inputs for maxSickLeave and maxPlannedIllness -->
+    <div class="col-md-6">
+      <label for="maxSickLeave" class="form-label"
+        >Max No. Of Sick Leave You Wanna Take in Week:</label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="maxSickLeave"
+        name="maxSickLeave"
+        [(ngModel)]="maxSickLeave"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="maxPlannedIllness" class="form-label"
+        >Max No of planning for your illness:</label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="maxPlannedIllness"
+        name="maxPlannedIllness"
+        [(ngModel)]="maxPlannedIllness"
+        required
+      />
+    </div>
+
+    <!-- Date picker for selecting holidays -->
+    <div class="col-md-12">
+      <label for="holidayDatePicker" class="form-label"
+        >Select Holiday List:</label
+      >
+      <input
+        type="date"
+        class="form-control"
+        id="holidayDatePicker"
+        name="holidayDatePicker"
+        [(ngModel)]="selectedDate"
+      />
+      <button type="button" class="btn btn-primary mt-2" (click)="addDate()">
+        Add Date 📆
+      </button>
+    </div>
+
+    <!-- Display selected holidays with count -->
+    <div class="col-md-12 mt-3">
+      <div *ngIf="holidayDates.length > 0">
+        <label class="form-label"
+          >Selected Holidays ({{ holidayDates.length }}):</label
+        >
+        <div class="selected-dates">
+          <span
+            *ngFor="let date of holidayDates"
+            class="badge bg-secondary me-1 mb-1"
+          >
+            {{ formatDate(date) }}
+            <span aria-hidden="true" class="ms-1" (click)="removeDate(date)"
+              >&times;</span
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </div>
+  </form>
+
+  <!-- Display vacation options -->
+  <div *ngIf="vacationOptions.length > 0" class="mt-5">
+    <h2 class="text-center mb-4">
+      Top {{ maxPlannedIllness }} Vacation Options 🏝️
+    </h2>
+    <div class="row">
+      <div class="col-12">
+        <div
+          *ngFor="
+            let option of vacationOptions.slice(0, maxPlannedIllness);
+            let i = index
+          "
+          class="card mb-3"
+        >
+          <div class="card-body">
+            <h5 class="card-title">Option {{ i + 1 }}</h5>
+            <p class="card-text">
+              <strong>Leave Used:</strong> {{ option.leaveUsed }}
+            </p>
+            <p class="card-text">
+              <strong>Leave Dates:</strong>
+              <span *ngFor="let date of option.leaveDates; let isLast = last">
+                {{ formatDate(date) }}
+                <span *ngIf="!isLast">, </span>
+              </span>
+            </p>
+            <p class="card-text">
+              <strong>Vacation Period:</strong>
+              {{ formatDate(option.vacationStart) }} -
+              {{ formatDate(option.vacationEnd) }}
+            </p>
+            <p class="card-text">
+              <strong>Total Vacation Days:</strong>
+              {{ option.vacationTotal }} days
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
