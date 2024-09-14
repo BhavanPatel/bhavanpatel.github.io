@@ -70,6 +70,7 @@
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
+    flex-direction: column;
   }
 
   .angular-logo {
@@ -178,6 +179,10 @@
 </style>
 
 <main class="main">
+  <div>
+    LARGE IMAGE
+    <img *ngIf="lcpImage" src="{{ lcpImage }}" />
+  </div>
   <div class="content">
     <div class="left-side">
       <svg
@@ -315,10 +320,6 @@
           </svg>
         </a>
       </div>
-    </div>
-    <div>
-      LARGE IMAGE
-      <img *ngIf="lcpImage" src="{{ lcpImage }}" />
     </div>
   </div>
 </main>
