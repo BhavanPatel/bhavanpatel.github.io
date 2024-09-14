@@ -11,7 +11,12 @@
       NREUM.init = {
         distributed_tracing: { enabled: true },
         privacy: { cookies_enabled: true },
-        ajax: { deny_list: ["bam.eu01.nr-data.net"] },
+        ajax: {
+          deny_list: [
+            "bam.eu01.nr-data.net",
+            "bhavanpatel.github.io/app/techbrew/",
+          ],
+        },
       };
 
       NREUM.loader_config = {
