@@ -18,9 +18,17 @@ export class AppComponent {
   }
 
   initLCPAlert() {
-    setTimeout(() => {
-      this.lcpImage =
-        'https://fastly.picsum.photos/id/397/1080/1080.jpg?hmac=32tbA6A7Zmn196TksDP73zB4L4RWB2aIi2JyFUsYfpg';
-    }, 10000);
+    setInterval(() => {
+      if (this.lcpImage.length) {
+        this.lcpImage = '';
+      } else {
+        this.lcpImage =
+          'https://fastly.picsum.photos/id/397/1080/1080.jpg?hmac=32tbA6A7Zmn196TksDP73zB4L4RWB2aIi2JyFUsYfpg';
+      }
+    }, 1000);
+    // setTimeout(() => {
+    //   this.lcpImage =
+    //     'https://fastly.picsum.photos/id/397/1080/1080.jpg?hmac=32tbA6A7Zmn196TksDP73zB4L4RWB2aIi2JyFUsYfpg';
+    // }, 10000);
   }
 }
