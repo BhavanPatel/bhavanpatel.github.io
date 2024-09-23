@@ -1,0 +1,8 @@
+<h1>INP</h1>
+<div class="container">
+  <button (click)="handleClick()">Click Here</button>
+
+  <div *ngIf="isLoading" class="loading">Processing your request...</div>
+
+  <div *ngIf="!isLoading" class="result">{{ result }}</div>
+</div>

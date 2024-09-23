@@ -1,0 +1,45 @@
+.container {
+  padding: 20px;
+}
+
+.banner {
+  background-color: darkorange;
+  padding: 200px;
+  margin-bottom: 20px;
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.middle {
+  margin-bottom: 40px;
+}
+
+img {
+  height: 1472px;
+  width: 736px;
+}
+
+.loader-banner {
+  animation: pulse 1.5s infinite;
+  height: 1081px;
+  width: 743px;
+}
+.loader-image {
+  animation: pulse 1.5s infinite;
+  height: 1472px;
+  width: 736px;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #c0c0c0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}

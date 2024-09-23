@@ -1,0 +1,28 @@
+.container {
+  padding: 20px;
+}
+
+.banner {
+  background-color: darkorange;
+  padding: 200px;
+  margin-bottom: 20px;
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.middle {
+  margin-bottom: 40px;
+}
+
+.image-container {
+  width: 100%;
+  min-height: 100px;
+  background-color: lightgray;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

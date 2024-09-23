@@ -1,34 +1,22 @@
-import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'techbrew';
-  lcpImage = '';
+export class AppComponent implements OnInit {
+  title = 'dapp';
+  constructor(private router: Router) {}
 
-  constructor() {
-    this.initLCPAlert();
-  }
-
-  initLCPAlert() {
-    setTimeout(() => {
-      this.lcpImage =
-        'https://fastly.picsum.photos/id/397/1080/1080.jpg?hmac=32tbA6A7Zmn196TksDP73zB4L4RWB2aIi2JyFUsYfpg';
-    }, 3000);
-    setInterval(() => {
-      if (this.lcpImage) {
-        this.lcpImage = '';
-      } else {
-        this.lcpImage =
-          'https://fastly.picsum.photos/id/397/1080/1080.jpg?hmac=32tbA6A7Zmn196TksDP73zB4L4RWB2aIi2JyFUsYfpg';
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        console.log('Navigated to:', event.url);
       }
-    }, 3000);
+    });
   }
 }

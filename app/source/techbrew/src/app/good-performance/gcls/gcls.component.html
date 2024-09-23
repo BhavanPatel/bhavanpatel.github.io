@@ -1,0 +1,25 @@
+<h1>CLS</h1>
+<div class="container">
+  <div *ngIf="isLoading" class="loader-banner"></div>
+  <div *ngIf="!isLoading" class="banner">
+    <h1>Huge Banner Causing Layout Shift</h1>
+  </div>
+
+  <div class="middle">
+    <p>
+      Static content that remains in place, but gets pushed down by the banner
+      and image.
+    </p>
+  </div>
+
+  <div class="bottom">
+    <div *ngIf="isLoading" class="loader-image"></div>
+
+    <img
+      *ngIf="!isLoading"
+      src="https://via.placeholder.com/200x400"
+      alt="Large Image"
+      sizes="1472vh,743vw"
+    />
+  </div>
+</div>

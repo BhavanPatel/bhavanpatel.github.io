@@ -1,0 +1,10 @@
+<h1>LCP</h1>
+<img
+  *ngIf="!isLoading"
+  src="{{ imageSrc }}"
+  sizes="300vh,300vw"
+  alt="Simulated Large Content"
+  class="img"
+/>
+
+<div *ngIf="isLoading" class="loader"></div>
