@@ -15,6 +15,10 @@ export const routes: Routes = [
   { path: '', redirectTo: 'poor', pathMatch: 'full' },
 ];
 
+// export const routes: Routes = [
+//   { path: '', component: GoodPerformanceComponent, pathMatch: 'full' },
+// ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

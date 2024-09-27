@@ -2,3 +2,13 @@
   height: 300px;
   width: 500px;
 }
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flag {
+  width: 192px;
+  height: 144px;
+}
