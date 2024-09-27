@@ -47,13 +47,13 @@ function getDebugInfo(name: any, attribution: any) {
 function sendToGoogleAnalytics(metrics: any) {
   const { name, delta, value, id, entries, attribution } = metrics;
   console.log(metrics);
-  gtag('event', name, {
-    value: delta,
-    metric_id: id,
-    metric_value: value,
-    metric_delta: delta,
-    ...getDebugInfo(name, attribution),
-  });
+  // gtag('event', name, {
+  //   value: delta,
+  //   metric_id: id,
+  //   metric_value: value,
+  //   metric_delta: delta,
+  //   ...getDebugInfo(name, attribution),
+  // });
 }
 
 onLCP(sendToGoogleAnalytics, { reportAllChanges: true });
